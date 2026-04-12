@@ -19,7 +19,6 @@ Recuperación UD2 - EJERCICIO CONSULTA DIRECTORES CINE CON MVC
 Usuario: <c:out value="${usuario}" /><br>
 Clave: <c:out value="${password}" /><br><br>
 
-<!-- MENSAJES -->
 <c:if test="${not empty mensajeExito}">
     <p><strong style="color:green;"><c:out value="${mensajeExito}" /></strong></p>
 </c:if>
@@ -28,17 +27,15 @@ Clave: <c:out value="${password}" /><br><br>
     <p><strong style="color:red;"><c:out value="${mensajeError}" /></strong></p>
 </c:if>
 
-<!-- BOTÓN MANTENIMIENTO -->
+
 <form action="mantenimiento">
     <button type="submit">Mantenimiento</button>
 </form>
 
 <hr>
 
-<!-- BOTÓN REGISTRAR NUEVO USUARIO -->
 <button onclick="mostrarFormularioRegistro()">Registrar nuevo usuario</button>
 
-<!-- FORMULARIO REGISTRO (oculto por defecto) -->
 <div id="formularioRegistro" style="display:none;">
     <h3>Registrar nuevo usuario</h3>
     
