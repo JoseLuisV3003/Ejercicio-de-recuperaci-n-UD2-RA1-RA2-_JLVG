@@ -15,7 +15,7 @@ Recuperación UD2 - EJERCICIO CONSULTA DIRECTORES CINE CON MVC
 
 <h1>Consultar directores de cine</h1>
 
-<!-- Formulario de búsqueda -->
+
 <c:if test="${not mostrarResultados and not mostrarListaFinal}">
     <form action="${pageContext.request.contextPath}/consulta" method="get">
         <label for="director">Nombre del director:</label>
