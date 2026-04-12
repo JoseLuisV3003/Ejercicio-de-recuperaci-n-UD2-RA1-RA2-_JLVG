@@ -11,13 +11,13 @@ Recuperación UD2 - EJERCICIO CONSULTA DIRECTORES CINE CON MVC
 <%@ page isELIgnored="false" %>
 
 <%
-    //Control de sesión
+    
     if (session.getAttribute("usuario") == null) {
         response.sendRedirect("login.jsp");
         return;
     }
 
-    // Obtener lista si no la hay
+
     if (request.getAttribute("lista") == null) {
         com.valverde.DAO.peliculaDAO dao = new com.valverde.DAO.peliculaDAO();
         request.setAttribute("lista", dao.obtenerTodas());
@@ -32,7 +32,6 @@ Recuperación UD2 - EJERCICIO CONSULTA DIRECTORES CINE CON MVC
 
 <h2>Mantenimiento de Películas</h2>
 
-<!-- 📢 MOSTRAR MENSAJE -->
 <c:if test="${not empty sessionScope.mensaje}">
     <p><strong style="color: <c:choose><c:when test="${sessionScope.tipoMensaje eq 'exito'}">green</c:when><c:otherwise>red</c:otherwise></c:choose>;">
         <c:out value="${sessionScope.mensaje}" />
@@ -40,7 +39,6 @@ Recuperación UD2 - EJERCICIO CONSULTA DIRECTORES CINE CON MVC
     <% session.removeAttribute("mensaje"); session.removeAttribute("tipoMensaje"); %>
 </c:if>
 
-<!-- 📋 LISTADO -->
 <h3>Películas Existentes</h3>
 <table border="1">
     <tr>
@@ -78,7 +76,6 @@ Recuperación UD2 - EJERCICIO CONSULTA DIRECTORES CINE CON MVC
 
 <hr>
 
-<!-- 🔧 FORMULARIO DE EDICIÓN -->
 <div id="formularioEdicion" style="display:none;">
     <h3>Editar Película</h3>
     
@@ -97,7 +94,6 @@ Recuperación UD2 - EJERCICIO CONSULTA DIRECTORES CINE CON MVC
 
 <hr>
 
-<!-- ➕ INSERTAR -->
 <h3>Añadir nueva película</h3>
 
 <form method="post" action="${pageContext.request.contextPath}/mantenimiento">
